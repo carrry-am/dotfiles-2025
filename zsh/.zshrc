@@ -32,6 +32,7 @@ setopt ALWAYS_TO_END          # Move cursor to end if word had one match
 # =============================================================================
 
 # Path settings
+export PATH="/opt/homebrew/bin:$PATH"
 PATH="$PATH:~/bin"
 
 # ls color settings (your existing settings)
@@ -180,6 +181,43 @@ bindkey -e
 # Better word navigation
 bindkey '^[[1;5C' forward-word                    # Ctrl+Right
 bindkey '^[[1;5D' backward-word                   # Ctrl+Left
+
+# =============================================================================
+# Custom Prompt with Git Status
+# =============================================================================
+
+# Enable git info in prompt
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Configure git status display
+zstyle ':vcs_info:git:*' formats '%b'
+zstyle ':vcs_info:*' enable git
+
+# Function to get git status indicators
+git_status() {
+    if [[ -n $vcs_info_msg_0_ ]]; then
+        local git_status=""
+        local staged=$(git diff --cached --name-only 2>/dev/null | wc -l | tr -d ' ')
+        local modified=$(git diff --name-only 2>/dev/null | wc -l | tr -d ' ')
+        local untracked=$(git ls-files --others --exclude-standard 2>/dev/null | wc -l | tr -d ' ')
+        
+        # Add status indicators
+        [[ $staged != "0" ]] && git_status+="+"
+        [[ $modified != "0" ]] && git_status+="!"
+        [[ $untracked != "0" ]] && git_status+="?"
+        
+        # Show clean status if no changes
+        [[ -z $git_status ]] && git_status="✓"
+        
+        echo "(%F{cyan}$vcs_info_msg_0_%f %F{yellow}$git_status%f)"
+    fi
+}
+
+# Set custom prompt
+setopt PROMPT_SUBST
+PROMPT='%F{blue}╭─%f %F{magenta}%~%f $(git_status)
+%F{blue}╰─%f %F{white}❯%f '
 
 # =============================================================================
 # Startup Message
