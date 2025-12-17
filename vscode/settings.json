@@ -1,0 +1,168 @@
+{
+  "update.showReleaseNotes": false,
+  "explorer.confirmDelete": false,
+  "files.insertFinalNewline": true,
+  // インデント
+  // デフォルト
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  // "[scss]": {
+  //   "editor.tabSize": 2
+  // },
+  // "[js]": {
+  //   "editor.tabSize": 2
+  // },
+  "editor.fontSize": 13,
+  // "editor.fontFamily": "PlemolJP, '0xProto','Ricty Diminished'",
+  "editor.fontFamily": "PlemolJP, '0xProto','Ricty Diminished'",
+  "editor.lineHeight": 16,
+  "editor.renderWhitespace": "boundary", // ホワイトスペースを表示する設定
+  // Welcomeページ非表示
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDragAndDrop": false,
+
+  // 整形
+  "editor.formatOnSave": true,
+  // "editor.formatOnPaste": true,
+  // "editor.formatOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+
+  // 「settings.json」と「デフォルトのユhーザー設定」を2ペインで同時に表示
+  // "workbench.settings.useSplitJSON": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  // エディタを別タブで開く
+  "workbench.editor.enablePreview": false,
+  // 末尾スペースを削除
+  "files.trimTrailingWhitespace": true,
+
+  // gitlens
+  "gitlens.hovers.currentLine.over": "line",
+
+  "editor.tabCompletion": "onlySnippets",
+  "javascript.suggest.completeFunctionCalls": true,
+  // ミニマップ非表示
+  "editor.minimap.enabled": false,
+  // ターミナルで選択のみでコピー
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.fontSize": 12,
+
+  "editor.inlineSuggest.enabled": true,
+  // "github.copilot.enable": {
+  //   "*": false,,
+  //   "plaintext": false,
+  //   "markdown": false,
+  //   "scminput": false
+  // },
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // // "github.copilot.enable": {
+  // //   "*": true,
+  // //   "plaintext": false,
+  // //   "markdown": false,
+  // //   "scminput": false
+  // // },
+
+  // vim
+  // "vim.vimrc.enable": true,
+  // "vim.vimrc.path": "~/.vimrc",
+  // "vim.disableExtension": true,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<Leader>", "q"], "commands": [":q"] }, // 閉じる
+    { "before": ["<Leader>", "w"], "commands": [":w"] }, // 保存
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    },
+    {
+      "before": ["<ESC>", "<ESC>"],
+      "commands": [":noh"]
+    },
+    {
+      "before": ["<C-p>"],
+      "after": ["\"", "0", "p"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  // "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.visualstar": true,
+  "playwright.reuseBrowser": true,
+  "playwright.showTrace": false,
+  "[typescript]": {},
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "github.copilot.nextEditSuggestions.enabled": false,
+
+  // "liveServer.settings.donotShowInfoMsg": true
+
+  // "[go]": {
+  //   "editor.tabSize": 2, // 公式のサイズは不明。2か4
+  //   "editor.insertSpaces": false, // Go公式はスペースでなくタブ
+  // "editor.formatOnSave": true, // ファイル保存時にフォーマット
+  //   "editor.defaultFormatter": "golang.go" // 変える
+  // }
+
+  // りあクト！ 本
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": "explicit"
+  // },
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "css.validate": false,
+  // "less.validate": false,
+  // "scss.validate": false,
+  // // "editor.codeActionsOnSave": {
+  // //   "source.fixAll.eslint": "explicit",
+  // //   "source.fixAll.stylelint": "explicit"
+  // // },
+  // "editor.formatOnSave": true,
+  // // "eslint.packageManager": "yarn",
+  // "typescript.enablePromptUseWorkspaceTsdk": true,
+  // "typescript.tsdk": "node_modules/typescript/lib"
+  // "[graphql]": {
+  //   "editor.formatOnSave": true
+  // },
+  // "[javascript]": {
+  //   "editor.formatOnSave": true
+  // },
+  // "[javascriptreact]": {
+  //   "editor.formatOnSave": true
+  // },
+  // "[json]": {
+  //   "editor.formatOnSave": true
+  // },
+  // "[typescript]": {
+  //   "editor.formatOnSave": true
+  // },
+  // "[typescriptreact]": {
+  //   "editor.formatOnSave": true
+  // }
+
+  // ts
+
+  // copilot
+  "github.copilot.chat.localeOverride": "ja",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "claudeCode.preferredLocation": "panel"
+}
