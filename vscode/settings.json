@@ -36,8 +36,6 @@
   // 「settings.json」と「デフォルトのユhーザー設定」を2ペインで同時に表示
   // "workbench.settings.useSplitJSON": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  // エディタを別タブで開く
-  "workbench.editor.enablePreview": false,
   // 末尾スペースを削除
   "files.trimTrailingWhitespace": true,
 
@@ -51,7 +49,8 @@
   // ターミナルで選択のみでコピー
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.fontSize": 12,
-
+  // エディタを別タブで開く
+  "workbench.editor.enablePreview": false,
   "editor.inlineSuggest.enabled": true,
   // "github.copilot.enable": {
   //   "*": false,,
@@ -78,26 +77,26 @@
     { "before": ["<Leader>", "w"], "commands": [":w"] }, // 保存
     {
       "before": ["u"],
-      "commands": ["undo"]
+      "commands": ["undo"],
     },
     {
       "before": ["<C-r>"],
-      "commands": ["redo"]
+      "commands": ["redo"],
     },
     {
       "before": ["<ESC>", "<ESC>"],
-      "commands": [":noh"]
+      "commands": [":noh"],
     },
     {
       "before": ["<C-p>"],
-      "after": ["\"", "0", "p"]
-    }
+      "after": ["\"", "0", "p"],
+    },
   ],
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
+      "after": ["<Esc>"],
+    },
   ],
   // "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
@@ -111,7 +110,7 @@
     "tsc",
     "git log",
     "git diff",
-    "git show"
+    "git show",
   ],
   "github.copilot.nextEditSuggestions.enabled": false,
 
@@ -164,5 +163,14 @@
   // copilot
   "github.copilot.chat.localeOverride": "ja",
   "liveServer.settings.donotShowInfoMsg": true,
-  "claudeCode.preferredLocation": "panel"
+  "claudeCode.preferredLocation": "panel",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "javascriptreact": false,
+  },
+  // "editor.autoClosingBrackets": "always",
+  "terminal.external.osxExec": "Ghostty.app",
 }

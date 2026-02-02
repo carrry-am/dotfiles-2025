@@ -1,6 +1,3 @@
-# Warp Terminal Configuration
-# Optimized zsh config for Warp (zprezto/powerlevel10k removed)
-
 # =============================================================================
 # Basic zsh configuration
 # =============================================================================
@@ -201,15 +198,15 @@ git_status() {
         local staged=$(git diff --cached --name-only 2>/dev/null | wc -l | tr -d ' ')
         local modified=$(git diff --name-only 2>/dev/null | wc -l | tr -d ' ')
         local untracked=$(git ls-files --others --exclude-standard 2>/dev/null | wc -l | tr -d ' ')
-        
+
         # Add status indicators
         [[ $staged != "0" ]] && git_status+="+"
         [[ $modified != "0" ]] && git_status+="!"
         [[ $untracked != "0" ]] && git_status+="?"
-        
+
         # Show clean status if no changes
         [[ -z $git_status ]] && git_status="✓"
-        
+
         echo "(%F{cyan}$vcs_info_msg_0_%f %F{yellow}$git_status%f)"
     fi
 }
@@ -219,9 +216,19 @@ setopt PROMPT_SUBST
 PROMPT='%F{blue}╭─%f %F{magenta}%~%f $(git_status)
 %F{blue}╰─%f %F{white}❯%f '
 
+#
+
 # =============================================================================
 # Startup Message
 # =============================================================================
 
-echo "🚀 Warp + Simple zsh config loaded!"
-echo "💡 Use 'reload' to refresh this config"
+
+eval "$(/Users/miyataasami/.local/bin/mise activate zsh)"
+
+# Added by Antigravity
+export PATH="/Users/miyataasami/.antigravity/antigravity/bin:$PATH"
+
+alias claudem="cd /Users/miyataasami/home/claude-empty && claude"
+
+echo "done .zshrc 👌"
+

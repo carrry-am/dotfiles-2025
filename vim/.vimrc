@@ -134,11 +134,11 @@ set wildmenu wildmode=list:full
 "redrawtime=10000
 
 " マウスを使う場合
-"set mouse=a
+set mouse=a
 "set ttymouse=xterm2
 
 " 最後にヤンクしたものをペースト
-nnoremap P "0p<CR>
+nnoremap <C-P> "0p
 
 " Leader
 let mapleader = "\<Space>"
@@ -148,7 +148,8 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>wq :wq<CR>
 
 " ESC代替え
-noremap! jj <ESC> 
+" noremap! jj <ESC> 
+inoremap <silent> jj <ESC>
 
 " バックスペースが効かないため
 set backspace=indent,eol,start
@@ -156,4 +157,8 @@ set backspace=indent,eol,start
 " 列をハイライト
 set cursorcolumn
 nnoremap <Leader>c :<C-u>setlocal cursorline! cursorcolumn!<CR>
+
+" htmlタグジャンプ
+filetype plugin on
+packadd! matchit
 
